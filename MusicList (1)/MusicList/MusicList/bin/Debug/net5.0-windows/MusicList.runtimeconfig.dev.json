@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Attila Sedon\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Attila Sedon\\.nuget\\packages"
+    ]
+  }
+}
