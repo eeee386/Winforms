@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MusicListASP.Models.Music>
+<h1>Index</h1>
+<a asp-action="Create">Hozzáadás</a>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.artist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.publishYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.priority)
+        </th>
+    </tr>
+    @if(Model != null){
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(m => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.artist)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.publishYear)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.length)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.priority)
+        </td>
+    </tr>
+    }
+    }
+
+</table>

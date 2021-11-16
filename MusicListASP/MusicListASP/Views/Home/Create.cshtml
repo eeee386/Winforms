@@ -1,0 +1,35 @@
+﻿@model MusicListASP.Models.Music
+    <h1>Zene Hozzáadása</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="title" class="control-label">Cím</label>
+                    <input asp-for="title" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="artist" class="control-label">Előadó</label>
+                    <input asp-for="artist" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="publishYear" class="control-label">Kiadás éve</label>
+                    <input asp-for="publishYear" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="length" class="control-label">Hossz</label>
+                    <input asp-for="length" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="priority" class="control-label">Hossz</label>
+                    <input asp-for="priority" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Back to list</a>
+    </div>
