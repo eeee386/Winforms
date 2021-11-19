@@ -11,26 +11,26 @@ namespace MusicListASP.Models
 
         [Display(Name = "Cím")]
         [Required]
-        public string title { get; set; }
+        public string Title { get; set; }
 
 
         [Display(Name = "Előadó")]
         [Required]
-        public string artist { get; set; }
+        public string Artist { get; set; }
 
 
         [Display(Name = "Kiadási év")]
         [Required]
-        public int publishYear { get; set; }
+        public int PublishYear { get; set; }
 
 
         [Display(Name = "Hossz")]
         [Required]
-        public int length { get; set; }
+        public int MusicLength { get; set; }
 
 
         [Display(Name = "Prioritás")]
         [Required]
-        public int priority { get; set; }
+        public int Priority { get; set; }
     }
 }

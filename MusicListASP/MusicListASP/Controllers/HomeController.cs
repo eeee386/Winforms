@@ -3,13 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MusicListASP.Context;
 using MusicListASP.Models;
+using System;
+using System.Linq;
 
 namespace MusicListASP.Controllers
 {
     public class HomeController : Controller
     {
 
-        private readonly EFContext _context;
+        private readonly EFContext _context = new EFContext();
 
         public IActionResult Create()
         {
@@ -18,8 +20,9 @@ namespace MusicListASP.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Artist,PublishYear,Lenght,Priority")] Music music)
+        public async Task<IActionResult> Create([Bind("ID,Title,Artist,PublishYear,MusicLength,Priority")] Music music)
         {
+            Console.WriteLine("it is called: " + ModelState.IsValid);
                 if (ModelState.IsValid)
                 {
                     _context.Add(music);
@@ -33,7 +36,7 @@ namespace MusicListASP.Controllers
         public async Task<IActionResult> Index()
         {
                 var musics = await _context.Music.ToListAsync();
-                return View(musics);
+                return View(musics.OrderBy(o => o.Priority).Reverse());
         }
 
     }

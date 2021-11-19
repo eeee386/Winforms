@@ -9,7 +9,7 @@ namespace MusicListASP.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=music.db");
+            optionsBuilder.UseSqlite(@"Data Source=Context\music.db");
         }
 
     }
